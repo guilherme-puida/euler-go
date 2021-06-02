@@ -2,11 +2,11 @@ package main
 
 import "fmt"
 
-func countRectangles(n int, m int) int {
+func countRectangles(n, m int) int {
 	return (m * n * (n + 1) * (m + 1)) / 4
 }
 
-func abs(a int, b int) int {
+func abs(a, b int) int {
 	if a > b {
 		return a - b
 	} else {
