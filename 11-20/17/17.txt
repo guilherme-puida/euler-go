@@ -1,0 +1,12 @@
+Numbers 1-19 -> Spell out and count
+1 through 9 = 36
+10 through 19 = 70
+Numbers 20-99 -> Prefix 10 times and sequence 1-9
+10 * (6 + 6 + 5 + 5 + 5 + 7 + 6 + 6) + 8 * 36 = 748
+Number 100-999 ->
+1 through 9 100 times -> 36 * 100 = 3600
+1 through 99 9 times -> 9 * (36 + 70 + 748) = 7686
+"hundred" 9 times -> 7 * 9 = 63
+"hundred and" 999 times -> 8910
+
+3600 + 7686 + 63 + 8910 + 11 = 21124
