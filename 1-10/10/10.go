@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"time"
 )
 
 func Erastothenes(n int) []int {
@@ -29,6 +30,7 @@ func Erastothenes(n int) []int {
 }
 
 func main() {
+	start := time.Now()
 	primes := Erastothenes(2000000)
 	sum := 0
 
@@ -36,5 +38,5 @@ func main() {
 		sum += e
 	}
 
-	fmt.Println(sum) // 142913828922
+	fmt.Println(sum, time.Since(start)) // 142913828922, 8.156541ms
 }

@@ -4,9 +4,11 @@ import (
 	"fmt"
 	"math/big"
 	"strconv"
+	"time"
 )
 
 func main() {
+	start := time.Now()
 	var i big.Int
 	i.Exp(big.NewInt(2), big.NewInt(1000), nil)
 
@@ -16,5 +18,5 @@ func main() {
 		ans += n
 	}
 
-	fmt.Println(ans) // 1366
+	fmt.Println(ans, time.Since(start)) // 1366, 17.698µs
 }

@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 func BiggestPrimeFactor(n int) int {
 	p := 0
@@ -23,5 +26,7 @@ func BiggestPrimeFactor(n int) int {
 }
 
 func main() {
-	fmt.Println(BiggestPrimeFactor(600851475143)) // 6857
+	start := time.Now()
+	ans := BiggestPrimeFactor(600851475143)
+	fmt.Println(ans, time.Since(start)) // 6857, 5.553µs
 }

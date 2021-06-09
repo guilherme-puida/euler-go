@@ -1,8 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 func main() {
+	start := time.Now()
 	var max, maxN int = 0, 0
 
 	for i := 1; i < 1000000; i++ {
@@ -22,5 +26,5 @@ func main() {
 		}
 	}
 
-	fmt.Println(maxN) // 837799
+	fmt.Println(maxN, time.Since(start)) // 837799, 224.189988ms
 }

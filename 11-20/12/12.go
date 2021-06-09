@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math"
+	"time"
 )
 
 func countDivisors(n int) int {
@@ -17,6 +18,7 @@ func countDivisors(n int) int {
 }
 
 func main() {
+	start := time.Now()
 	var i int = 1
 	for {
 		var n int = 0
@@ -24,7 +26,7 @@ func main() {
 			n += j
 		}
 		if countDivisors(n) > 500 {
-			fmt.Println(n) // 76576500
+			fmt.Println(n, time.Since(start)) // 76576500, 426.895687ms
 			break
 		}
 		i++

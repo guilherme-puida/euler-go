@@ -10,16 +10,17 @@ func Date(year, month, day int) time.Time {
 }
 
 func main() {
-	start := Date(1901, 1, 1)
+	start := time.Now()
+	date := Date(1901, 1, 1)
 
 	count := 0
 
-	for start != Date(2000, 12, 1) {
-		if start.Day() == 1 && start.Weekday() == 0 {
+	for date != Date(2000, 12, 1) {
+		if date.Day() == 1 && date.Weekday() == 0 {
 			count++
 		}
-		start = start.AddDate(0, 0, 1)
+		date = date.AddDate(0, 0, 1)
 
 	}
-	fmt.Println(count) // 171
+	fmt.Println(count, time.Since(start)) // 171, 2.993229ms
 }

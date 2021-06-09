@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 func fibonacci() func() int {
 	first, second := 0, 1
@@ -12,6 +15,7 @@ func fibonacci() func() int {
 }
 
 func main() {
+	start := time.Now()
 	f := fibonacci()
 	count := 0
 	for {
@@ -24,5 +28,5 @@ func main() {
 		}
 	}
 
-	fmt.Println(count) // 4613732
+	fmt.Println(count, time.Since(start)) // 4613732, 383ns
 }

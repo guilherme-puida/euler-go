@@ -6,10 +6,12 @@ import (
 	"log"
 	"math/big"
 	"os"
+	"time"
 )
 
 func main() {
-	file, err := os.Open("/home/gui/euler-go/23/13.txt")
+	start := time.Now()
+	file, err := os.Open("/home/gui/Programming/Go/euler-go/11-20/13/13.txt")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -34,5 +36,5 @@ func main() {
 		log.Fatal(err)
 	}
 
-	fmt.Println(a.Text(10)) // 5537376230390876637302048746832985971773659831892672
+	fmt.Println(a.Text(10)[0:10], time.Since(start)) // 5537376230, 83.861µs
 }

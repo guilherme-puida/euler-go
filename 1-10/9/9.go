@@ -1,8 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 func main() {
+	start := time.Now()
 	a, b, c := 0, 0, 0
 
 out:
@@ -16,5 +20,5 @@ out:
 		}
 	}
 
-	fmt.Println(a * b * c) // 31875000
+	fmt.Println(a*b*c, time.Since(start)) // 31875000, 81.213µs
 }

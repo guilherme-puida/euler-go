@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"strconv"
 	"strings"
+	"time"
 )
 
 func Max(a, b int) int {
@@ -15,6 +16,7 @@ func Max(a, b int) int {
 }
 
 func main() {
+	start := time.Now()
 	ot := `75
 95 64
 17 47 82
@@ -60,6 +62,6 @@ func main() {
 		triangle[i] = newLine
 	}
 
-	fmt.Println(triangle[0][0]) // 1074
+	fmt.Println(triangle[0][0], time.Since(start)) // 1074, 21.639µs
 
 }

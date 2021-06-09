@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"strconv"
+	"time"
 )
 
 func reverse(s string) string {
@@ -15,6 +16,7 @@ func reverse(s string) string {
 }
 
 func main() {
+	start := time.Now()
 	ans := 0
 
 	for i := 100; i < 1000; i++ {
@@ -27,5 +29,5 @@ func main() {
 		}
 	}
 
-	fmt.Println(ans) // 906609
+	fmt.Println(ans, time.Since(start)) // 906609, 72.324113ms
 }

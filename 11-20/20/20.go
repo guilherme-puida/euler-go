@@ -4,9 +4,11 @@ import (
 	"fmt"
 	"math/big"
 	"strconv"
+	"time"
 )
 
 func main() {
+	start := time.Now()
 	var n big.Int
 	n.MulRange(1, 100)
 	sol := 0
@@ -16,5 +18,5 @@ func main() {
 		sol += a
 	}
 
-	fmt.Println(sol) // 648
+	fmt.Println(sol, time.Since(start)) // 648, 18.408µs
 }

@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 func Generate(ch chan<- int) {
 	for i := 2; ; i++ {
@@ -18,6 +21,7 @@ func Filter(in <-chan int, out chan<- int, prime int) {
 }
 
 func main() {
+	start := time.Now()
 	ch := make(chan int)
 	go Generate(ch)
 	for i := 1; i <= 10000; i++ {
@@ -28,5 +32,5 @@ func main() {
 	}
 
 	prime := <-ch
-	fmt.Println(prime) // 104743
+	fmt.Println(prime, time.Since(start)) // 104743, 8.85683667s
 }
