@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 func Factoradic(n int) [10]int {
 	var factoradic [10]int
@@ -29,6 +32,7 @@ func removeElement(slice []int, element int) []int {
 }
 
 func main() {
+	start := time.Now()
 	digits := []int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
 	factoradic := Factoradic(999999)
 
@@ -39,5 +43,5 @@ func main() {
 		fmt.Println(perm, digits, e)
 	}
 
-	fmt.Println(perm) // 2783915460
+	fmt.Println(perm, time.Since(start)) // 2783915460, 62.37µs
 }

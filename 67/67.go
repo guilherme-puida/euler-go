@@ -5,6 +5,7 @@ import (
 	"io/ioutil"
 	"strconv"
 	"strings"
+	"time"
 )
 
 func Max(a, b int) int {
@@ -16,7 +17,8 @@ func Max(a, b int) int {
 }
 
 func main() {
-	fileBuf, err := ioutil.ReadFile("/home/gui/euler-go/67/p067_triangle.txt")
+	start := time.Now()
+	fileBuf, err := ioutil.ReadFile("/home/gui/Programming/Go/euler-go/67/p067_triangle.txt")
 	if err != nil {
 		panic(err)
 	}
@@ -52,6 +54,6 @@ func main() {
 		triangle[i] = newLine
 	}
 
-	fmt.Println(triangle[0][0]) // 7273
+	fmt.Println(triangle[0][0], time.Since(start)) // 7273, 291.55µs
 
 }

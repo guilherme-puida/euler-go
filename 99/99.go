@@ -8,10 +8,12 @@ import (
 	"os"
 	"strconv"
 	"strings"
+	"time"
 )
 
 func main() {
-	file, err := os.Open("/home/gui/euler-go/99/p099_base_exp.txt")
+	start := time.Now()
+	file, err := os.Open("/home/gui/Programming/Go/euler-go/99/p099_base_exp.txt")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -35,6 +37,6 @@ func main() {
 		line++
 	}
 
-	fmt.Println(maxLine) // 709
+	fmt.Println(maxLine, time.Since(start)) // 709, 178.663µs
 
 }

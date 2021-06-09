@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math"
+	"time"
 )
 
 func getSumDivisors(a int) int {
@@ -16,6 +17,7 @@ func getSumDivisors(a int) int {
 }
 
 func main() {
+	start := time.Now()
 	m := make(map[int]bool)
 
 	for a := 1; a < 10000; a++ {
@@ -38,5 +40,5 @@ func main() {
 		sum += key
 	}
 
-	fmt.Println(sum) // 31626
+	fmt.Println(sum, time.Since(start)) // 31626, 9.786754ms
 }

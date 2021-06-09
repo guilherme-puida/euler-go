@@ -3,9 +3,11 @@ package main
 import (
 	"fmt"
 	"math/big"
+	"time"
 )
 
 func main() {
+	start := time.Now()
 	m := make(map[string]bool)
 
 	for a := 2; a <= 100; a++ {
@@ -19,5 +21,5 @@ func main() {
 		}
 	}
 
-	fmt.Println(len(m)) // 9183
+	fmt.Println(len(m), time.Since(start)) // 9183, 10.368893ms
 }

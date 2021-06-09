@@ -3,9 +3,11 @@ package main
 import (
 	"fmt"
 	"math/big"
+	"time"
 )
 
 func main() {
+	start := time.Now()
 	var sum big.Int
 	for i := 1; i <= 1000; i++ {
 		var n big.Int
@@ -15,5 +17,5 @@ func main() {
 	}
 
 	s := sum.Text(10)
-	fmt.Println(s[len(s)-10:]) // 9110846700
+	fmt.Println(s[len(s)-10:], time.Since(start)) // 9110846700, 2.463817ms
 }

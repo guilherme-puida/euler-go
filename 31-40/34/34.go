@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"strconv"
+	"time"
 )
 
 func Factorial(n int) int {
@@ -25,11 +26,12 @@ func DigitFactorials(n int) int {
 }
 
 func main() {
+	start := time.Now()
 	ans := 0
-	for i := 3; ; i++ {
+	for i := 3; i < 50000; i++ {
 		if i == DigitFactorials(i) {
 			ans += i
-			fmt.Println(i, ans) // 40730
 		}
 	}
+	fmt.Println(ans, time.Since(start)) // 40730, 7.002312ms
 }

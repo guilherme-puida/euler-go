@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 func isPrime(n int) bool {
 	if n <= 1 {
@@ -20,6 +23,7 @@ func isPrime(n int) bool {
 }
 
 func main() {
+	start := time.Now()
 	maxN, maxA, maxB := 0, 0, 0
 	for a := -1000; a <= 1000; a++ {
 		for b := -1000; b <= 1000; b++ {
@@ -39,6 +43,6 @@ func main() {
 			}
 		}
 	}
-	fmt.Println(maxA * maxB) // -59231
+	fmt.Println(maxA*maxB, time.Since(start)) // -59231, 37.806583266s
 	// Note: slow, maybe optimize?
 }

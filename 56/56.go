@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"math/big"
 	"strconv"
+	"time"
 )
 
 func SumDigits(a, b int) int {
@@ -19,6 +20,7 @@ func SumDigits(a, b int) int {
 }
 
 func main() {
+	start := time.Now()
 	maxSum := 0
 	for a := 1; a < 100; a++ {
 		for b := 1; b < 100; b++ {
@@ -29,5 +31,5 @@ func main() {
 		}
 	}
 
-	fmt.Println(maxSum) // 972
+	fmt.Println(maxSum, time.Since(start)) // 972, 22.996605ms
 }

@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"time"
 )
 
 func isAbundant(n int) bool {
@@ -19,6 +20,7 @@ func isAbundant(n int) bool {
 }
 
 func main() {
+	start := time.Now()
 	var abundant []int
 	for i := 1; i <= 20161; i++ {
 		if isAbundant(i) {
@@ -45,6 +47,6 @@ func main() {
 		}
 	}
 
-	fmt.Println(ans) // 4179871
+	fmt.Println(ans, time.Since(start)) // 4179871, 162.655367ms
 
 }

@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"math"
 	"strconv"
+	"time"
 )
 
 func SumFifthPowerDigits(n int) int {
@@ -17,11 +18,15 @@ func SumFifthPowerDigits(n int) int {
 }
 
 func main() {
+	start := time.Now()
 	sum := 0
 	for i := 2; ; i++ {
 		if i == SumFifthPowerDigits(i) {
 			sum += i
-			fmt.Println(sum) // 443839
+		}
+		if i > 500000 {
+			break
 		}
 	}
+	fmt.Println(sum, time.Since(start)) // 443839, 143.44952ms
 }

@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"math"
 	"strconv"
+	"time"
 )
 
 func DigitCount(n int) int {
@@ -12,6 +13,7 @@ func DigitCount(n int) int {
 }
 
 func main() {
+	start := time.Now()
 	v := [7]int{1, 10, 100, 1000, 10000, 100000, 1000000}
 	curV, curPos := 0, 0
 	ans := 1
@@ -28,5 +30,5 @@ func main() {
 		}
 		curV += DigitCount(i)
 	}
-	fmt.Println(ans) // 210
+	fmt.Println(ans, time.Since(start)) // 210, 5.060911ms
 }

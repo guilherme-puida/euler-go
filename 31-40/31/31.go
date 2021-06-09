@@ -1,8 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 func main() {
+	start := time.Now()
 	coins := [...]int{1, 2, 5, 10, 20, 50, 100, 200}
 	var sol [201]int
 	sol[0] = 1
@@ -13,6 +17,6 @@ func main() {
 		}
 	}
 
-	fmt.Println(sol[len(sol)-1]) // 73682
+	fmt.Println(sol[len(sol)-1], time.Since(start)) // 73682, 1.182µs
 
 }

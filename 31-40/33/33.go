@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 func GCD(a, b int) int {
 	for b != 0 {
@@ -12,6 +15,7 @@ func GCD(a, b int) int {
 }
 
 func main() {
+	start := time.Now()
 	d, n := 1, 1
 
 	for i := 1; i < 10; i++ {
@@ -25,5 +29,5 @@ func main() {
 		}
 	}
 	d /= GCD(d, n)
-	fmt.Println(d) // 100
+	fmt.Println(d, time.Since(start)) // 100, 542ns
 }

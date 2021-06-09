@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math/big"
+	"time"
 )
 
 func isPalindrome(str string) bool {
@@ -16,6 +17,7 @@ func isPalindrome(str string) bool {
 }
 
 func main() {
+	start := time.Now()
 	n := big.NewInt(1)
 	ans := big.NewInt(0)
 
@@ -30,5 +32,5 @@ func main() {
 		n.Add(n, big.NewInt(1))
 	}
 
-	fmt.Println(ans.Text(10)) // 872187
+	fmt.Println(ans.Text(10), time.Since(start)) // 872187, 230.151237ms
 }

@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math/big"
+	"time"
 )
 
 func Choose(n, r int) big.Int {
@@ -17,6 +18,7 @@ func Choose(n, r int) big.Int {
 }
 
 func main() {
+	start := time.Now()
 	ans := 0
 	for n := 1; n <= 100; n++ {
 		for r := 1; r <= n; r++ {
@@ -27,5 +29,5 @@ func main() {
 		}
 	}
 
-	fmt.Println(ans) // 4075
+	fmt.Println(ans, time.Since(start)) // 4075, 37.660958ms
 }

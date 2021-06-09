@@ -5,6 +5,7 @@ import (
 	"io/ioutil"
 	"sort"
 	"strings"
+	"time"
 )
 
 func LetterValue(letter string) int {
@@ -21,7 +22,8 @@ func NameValue(name string) int {
 }
 
 func main() {
-	ot, err := ioutil.ReadFile("/home/gui/euler-go/21-30/22/p022_names.txt")
+	start := time.Now()
+	ot, err := ioutil.ReadFile("/home/gui/Programming/Go/euler-go/21-30/22/p022_names.txt")
 	if err != nil {
 		panic(err)
 	}
@@ -38,6 +40,6 @@ func main() {
 		score += (i + 1) * value
 	}
 
-	fmt.Println(score) // 871198282
+	fmt.Println(score, time.Since(start)) // 871198282, 1.6847ms
 
 }

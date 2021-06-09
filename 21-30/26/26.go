@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 func Length(n int) int {
 	a := 1
@@ -16,6 +19,7 @@ func Length(n int) int {
 }
 
 func main() {
+	start := time.Now()
 	p := [...]int{7, 11, 13, 17, 19, 23, 29,
 		31, 37, 41, 43, 47, 53, 59, 61, 67, 71,
 		73, 79, 83, 89, 97, 101, 103, 107, 109, 113,
@@ -44,5 +48,5 @@ func main() {
 		}
 	}
 
-	fmt.Println(maxP) // 983
+	fmt.Println(maxP, time.Since(start)) // 983, 477.443µs
 }

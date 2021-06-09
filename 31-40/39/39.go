@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 func SortedTuple(a, b int) [2]int {
 	var t [2]int
@@ -42,6 +45,7 @@ func RightTriangles(p int) int {
 }
 
 func main() {
+	start := time.Now()
 	max, maxValue := 0, 0
 	for i := 1; i <= 1000; i++ {
 		cur := RightTriangles(i)
@@ -51,5 +55,5 @@ func main() {
 		}
 	}
 
-	fmt.Println(maxValue) // 840
+	fmt.Println(maxValue, time.Since(start)) // 840, 296.817µs
 }
